@@ -1,0 +1,14 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Sign Up</a></p>
+{% endif %}
+<h1>Welcome to Hangman!</h1>
+<a href="{% url 'play_game' 1 %}">Animals</a>
+<a href="{% url 'play_game' 2 %}">Harry Potter</a>
+<a href="{% url 'play_game' 3 %}">Programming</a>
+<a href="{% url 'leaderboard' %}">Leaderboard</a>

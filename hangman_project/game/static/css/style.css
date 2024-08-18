@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #343a40;
+    border-radius: 0 0 10px 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-content h2 {
+    font-size: 1.8em;
+    color: #343a40;
+}
+
+.main-content p {
+    font-size: 1.2em;
+    color: #555555;
+}
+
+/* Game Board */
+.hangman-board {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hangman-board pre {
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+
+.word-tiles {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.word-tiles span {
+    font-size: 2em;
+    margin: 0 5px;
+    padding: 5px;
+    border-bottom: 2px solid #007bff;
+}
+
+.guessed-letters {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.guess-form {
+    margin-top: 20px;
+}
+
+.guess-form input[type="text"] {
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 50px;
+    text-align: center;
+}
+
+.guess-form button {
+    font-size: 1.2em;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.guess-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Leaderboard */
+.leaderboard {
+    margin-top: 30px;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.leaderboard th, .leaderboard td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.leaderboard th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.leaderboard tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #343a40;
+    color: #ffffff;
+    margin-top: 30px;
+    border-radius: 0 0 10px 10px;
+}

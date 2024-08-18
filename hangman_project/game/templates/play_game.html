@@ -1,0 +1,20 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<h1>Hangman Game</h1>
+<pre>{{ stick_figure }}</pre>
+<p>{{ word_tiles }}</p>
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+{% if message %}
+<p>{{ message }}</p>
+{% else %}
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="guess" maxlength="1" required>
+    <button type="submit">Guess</button>
+</form>
+{% endif %}
