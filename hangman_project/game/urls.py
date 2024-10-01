@@ -9,4 +9,6 @@ urlpatterns = [
     path('leaderboard/', views.leaderboard, name='leaderboard'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
+    path('', views.home, name='play_game'),
+    path('play/<int:category>/', views.play_game, name='play_game'),
 ]

@@ -2,19 +2,45 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
-
+<body>
 <h1>Hangman Game</h1>
-<pre>{{ stick_figure }}</pre>
-<p>{{ word_tiles }}</p>
-{% if error %}
-<p style="color:red;">{{ error }}</p>
+
+<div id="stick-figure-box">
+    {% if stickword %}
+        <pre><img src="{% static 'game_images/'|add:stickword|add:'.jpg' %}" class="zoomed-image-{{ guessed_wrong_amount }}" alt="Stick Figure"></pre>
+    {% endif %}
+</div>
+
+<div id="word-tiles-box">
+    <p>{{ word_tiles }}</p>
+</div>
+
+<div id="guessed-box">
+    <p>{{ guessed_letters }}</p>
+</div>
+
+<div id="message-box">
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</div>
+
+{% if not game_over %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="guess" maxlength="1" required>
+        <button type="submit">Guess</button>
+    </form>
 {% endif %}
-{% if message %}
-<p>{{ message }}</p>
-{% else %}
-<form method="POST">
-    {% csrf_token %}
-    <input type="text" name="guess" maxlength="1" required>
-    <button type="submit">Guess</button>
-</form>
+
+{% if game_over %}
+    <form method="POST">
+        {% csrf_token %}
+        <div>{{ game_over|safe }}</div>
+    </form>
 {% endif %}
+
+</body>
